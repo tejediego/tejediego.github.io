@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Orden de</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="modernizr.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <form name="order" method="POST" action="/submit" lang="es">
+        <h1>Orden de partes</h1>
+        <fieldset>
+            <legend>Detalles de contacto</legend>
+            <ul>
+                <li>
+                    <label class="required">
+                        <div>Nombre completo</div>
+                        <input name="name" required autofocus>
+                    </label>
+                </li>
+                <li>
+                    <label class="required">
+                        <div>Dirección de correo</div>
+                        <input type="email" name="email" required>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <div>Direccion</div>
+                        <input name="address" placeholder="Dirección">
+                    </label>
+                    <div>&nbsp;</div>
+                    <input name="city" class="city" placeholder="Ciudad">
+                    <input name="state" class="state" placeholder="Departamento">
+                    <input name="zip" class="zip" placeholder="Código zip">
+                    <div>&nbsp;</div>
+                    <select name="country">
+                        <option value="0">País</option>
+                        <option value="GT">Guatemala</option>
+                        <option value="HON">Honduras</option>
+                        <option value="ELS">El Salvador</option>
+                        <option value="CR">Costa Rica</option>
+                    </select>
+                </li>
+                <li>
+                    <label>
+                        <div>Número de teléfono</div>
+                        <input type="tel" name="homephone">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <div>Celular 1</div>
+                        <input type="tel" name="cellphone">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <div>Celular 2</div>
+                        <input type="tel" name="cellphone2">
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Detalles de sesión</legend>
+            <ul>
+                <li>
+                    <label class="required">
+                        <div>Contraseña</div>
+                        <input type="password" name="password" required>
+                    </label>
+                </li>
+                <li>
+                    <label class="required">
+                        <div>Confirmar contraseña</div>
+                        <input type="password" name="confirm_password" required>
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Detalles de orden</legend>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código de producto</th><th>Descripción</th>
+                        <th>Cant</th><th>Precio</th><th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            D10001
+                            <input type="hidden" name="product_code" value="D10001">
+                        </td>
+                        <td>Producto No. 1</td>
+                        <td>
+                            <input type="number" data-price="3999.99" name="quantity"
+                                value="0" min="0" max="99" maxlength="2">
+                        </td>
+                        <td>Q3999.99</td>
+                        <td>
+                            <output name="item_total" class="item_total">Q0.00</output>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            D10002
+                            <input type="hidden" name="product_code" value="D10002">
+                        </td>
+                        <td>Producto No. 2</td>
+                        <td>
+                            <input type="number" data-price="2999.99" name="quantity"
+                                value="0" min="0" max="99" maxlength="2">
+                        </td>
+                        <td>Q2999.99</td>
+                        <td>
+                            <output name="item_total" class="item_total">Q0.00</output>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            D10003
+                            <input type="hidden" name="product_code" value="D10003">
+                        </td>
+                        <td>Producto No. 3</td>
+                        <td>
+                            <input type="number" data-price="3999.99" name="quantity"
+                                value="0" min="0" max="99" maxlength="2">
+                        </td>
+                        <td>Q1999.99</td>
+                        <td>
+                            <output name="item_total" class="item_total">Q0.00</output>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">Total orden</td>
+                        <td>
+                            <output name="order_total" id="order_total">Q0.00</output>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Detalles de pago</legend>
+            <ul>
+                <li>
+                    <label class="required">
+                        <div>Nombre en tarjeta</div>
+                        <input name="card_name" required>
+                    </label>
+                </li>
+                <li>
+                    <label class="required">
+                        <div>Número de tarjeta</div>
+                        <input name="card_number" pattern="[0-9]{13,16}"
+                        maxlength="16" required title="13-16 dígitos, sin espacios">
+                    </label>
+                </li>
+                <li>
+                    <label class="required">
+                        <div>Fecha de expiracion</div>
+                        <input type="month" name="card_expiry" maxlength="7"
+                        placeholder="YYYY-MM" required >
+                    </label>
+                </li>
+                <li>
+                    <label class="required">
+                        <div>CVV2 Num</div>
+                        <input name="card_cvv2" class="cvv" maxlength="3"
+                            pattern="[0-9]{3}" required title="exactamente 3 dígitos">
+                        <span>(Digitos atrás de la tarjeta)</span>
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+        <div class="buttons">
+            <input type="submit" value="Enviar orden">
+            <input type="submit" id="saveOrder" value="Guardar orden"
+                formaction="/save" formnovalidate>         
+        </div>
+        </form>
+    </body>
+</html>
