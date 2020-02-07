@@ -82,8 +82,8 @@ li input, li select {
 span.twitter_prefix { color: #666; font-size: .95em; font-weight: bold; }
 
 input.city { width: 80px; margin-right: 0; }
-input.state { width: 35px; margin-right: 0; }
-input.zip { width: 90px; }
+input.state { width: 90px; margin-right: 0; }
+input.zip { width: 35px; }
 input.twitter { width: 206px; }
 
 table {
@@ -166,20 +166,20 @@ input[type=submit], input[type=button] {
     text-shadow: 1px 1px 0px #000;
     font-size: 0.9em; cursor: pointer;
     font-weight: bold;
-    background-image: -webkit-linear-gradient(top, #896640 0%, #705536 100%);
+    /*background-image: -webkit-linear-gradient(top, #896640 0%, #705536 100%);
     background-image: -moz-linear-gradient(top, #896640 0%, #705536 100%);
     background-image: -o-linear-gradient(top, #896640 0%, #705536 100%);
     background-image: -ms-linear-gradient(top, #896640 0%, #705536 100%);
-    background-image: linear-gradient(to bottom, #896640 0%, #705536 100%);
+    background-image: linear-gradient(to bottom, #896640 0%, #705536 100%);*/
 }
 
 input[type=submit]:active, input[type=button]:active {
     background-color: #705536;
-    background-image: -webkit-linear-gradient(bottom, #896640 0%, #705536 100%);
+    /*background-image: -webkit-linear-gradient(bottom, #896640 0%, #705536 100%);
     background-image: -moz-linear-gradient(bottom, #896640 0%, #705536 100%);
     background-image: -o-linear-gradient(bottom, #896640 0%, #705536 100%);
     background-image: -ms-linear-gradient(bottom, #896640 0%, #705536 100%);
-    background-image: linear-gradient(to top, #896640 0%, #705536 100%);
+    background-image: linear-gradient(to top, #896640 0%, #705536 100%);*/
 }
 
 .placeholder {
