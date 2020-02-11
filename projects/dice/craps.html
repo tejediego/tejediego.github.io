@@ -1,0 +1,21 @@
+<html> 
+	<head>
+		<title>Craps | Juego</title>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+	</head>
+	<body onLoad="init();">  
+		<canvas id="canvas" width="400" height="300">
+			Este navegador no soporta el elemento canvas de HTML5.
+		</canvas> 
+		<br> 
+		<button onClick="tirardado();">Tirar dados</button>
+		<form name="f" id="f">
+			Fase: <input name="stage" value="Primer tiro" disabled>
+			Punto: <input name="pv" value="" disabled>
+			Resultado: <input name="outcome" value="" disabled>
+			<!-- Banco: <input name="bank" value="100" type="number" disabled>
+			Apuesta: <input name="bet" id="bet" value="10" type="number"
+				min="10" max="99" step="5"> -->
+		</form>
+</body>
+</html>
